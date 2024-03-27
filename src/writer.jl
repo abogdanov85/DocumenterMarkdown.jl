@@ -82,7 +82,7 @@ function render(io::IO, mime::MIME"text/plain", node::Documents.DocsNode, page, 
     println(io, anchor, "\n", header, "\n\n")
     # Body. May contain several concatenated docstrings.
     renderdoc(io, mime, node.docstr, page, doc)
-    println("\n[//]: # (End of docstring)\n")
+    println(io, "\n[//]: # (End of docstring)\n")
 end
 
 function renderdoc(io::IO, mime::MIME"text/plain", md::MarkdownStdlib.MD, page, doc)
